@@ -1,0 +1,2370 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TelegramBot</name>
+    </assembly>
+    <members>
+        <member name="T:hShahpouri.Telegram.MaskPosition">
+            <summary>
+            This object describes the position on faces where a mask should be placed by default
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MaskPosition.point_forehead">
+            <summary>
+            “forehead” for <see cref="P:hShahpouri.Telegram.MaskPosition.point"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MaskPosition.point_eyes">
+            <summary>
+            “eyes” for <see cref="P:hShahpouri.Telegram.MaskPosition.point"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MaskPosition.point_mouth">
+            <summary>
+            “mouth” for <see cref="P:hShahpouri.Telegram.MaskPosition.point"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MaskPosition.point_chin">
+            <summary>
+            “chin” for <see cref="P:hShahpouri.Telegram.MaskPosition.point"/>
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MaskPosition.point">
+            <summary>
+            The part of the face relative to which the mask should be placed. One of “forehead”, “eyes”, “mouth”, or “chin”
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MaskPosition.x_shift">
+            <summary>
+            Shift by X-axis measured in widths of the mask scaled to the face size, from left to right. For example, choosing -1.0 will place mask just to the left of the default mask position
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MaskPosition.y_shift">
+            <summary>
+            Shift by Y-axis measured in heights of the mask scaled to the face size, from top to bottom. For example, 1.0 will place the mask just below the default mask position
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MaskPosition.scale">
+            <summary>
+            Mask scaling coefficient. For example, 2.0 means double size
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Animation">
+            <summary>
+            This object represents an animation file (GIF or H.264/MPEG-4 AVC video without sound)
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Animation.file_id">
+            <summary>
+            Unique file identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Animation.width">
+            <summary>
+            Video width as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Animation.height">
+            <summary>
+            Video height as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Animation.duration">
+            <summary>
+            Duration of the video in seconds as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Animation.thumb">
+            <summary>
+            Optional. Animation thumbnail as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Animation.file_name">
+            <summary>
+            Optional. Original animation filename as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Animation.mime_type">
+            <summary>
+            Optional. MIME type of the file as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Animation.file_size">
+            <summary>
+            Optional. File size
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Audio">
+            <summary>
+            This object represents an audio file to be treated as music by the Telegram clients
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Audio.file_id">
+            <summary>
+            Unique identifier for this file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Audio.duration">
+            <summary>
+            Duration of the audio in seconds as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Audio.performer">
+            <summary>
+            Optional. Performer of the audio as defined by sender or by audio tags
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Audio.title">
+            <summary>
+            Optional. Title of the audio as defined by sender or by audio tags
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Audio.mime_type">
+            <summary>
+            Optional. MIME type of the file as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Audio.file_size">
+            <summary>
+            Optional. File size
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Audio.thumb">
+            <summary>
+            Optional. Thumbnail of the album cover to which the music file belongs
+            </summary>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.#ctor(System.String)">
+            <summary>
+            Construct a new <see cref="T:hShahpouri.Telegram.Bot"/> object based on given <paramref name="token"/>
+            </summary>
+            <param name="token">Bot Token</param>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendMessage(System.String,System.String,hShahpouri.Telegram.Bot.ParseMode,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send text messages
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="text">Text of the message to be sent</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="disable_web_page_preview">Disables link previews for links in this message</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.forwardMessage(System.String,System.String,System.Nullable{System.Boolean},System.Int32)">
+            <summary>
+            Use this method to forward messages of any kind
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel</param>
+            <param name="from_chat_id">Unique identifier for the chat where the original message was sent</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="message_id">Unique message identifier</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendPhoto(System.String,System.String,System.Boolean,hShahpouri.Telegram.Bot.ParseMode,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send photos
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="photo">Photo to send. You can either pass a file_id as String to resend a photo that is already on the Telegram servers, or upload a new photo</param>
+            <param name="is_file_id">If the photo parameter is a file_id, send True otherwise False</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="caption">Photo caption (may also be used when resending photos by file_id), 0-200 characters</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendAudio(System.String,System.String,System.Boolean,hShahpouri.Telegram.Bot.ParseMode,System.String,System.String,System.Nullable{System.Int32},System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send audio files, if you want Telegram clients to display them in the music player up to 50 MB in size
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="audio">Audio file to send. You can either pass a file_id as String to resend an audio that is already on the Telegram servers, or upload a new audio</param>
+            <param name="caption">Audio caption, 0-1024 characters</param>
+            <param name="is_file_id">Define that audio parameter is a file_id or filepath</param>
+            <param name="duration">Duration of the audio in seconds</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="thumb">Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data.</param>
+            <param name="performer">Performer</param>
+            <param name="title">Track name</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendDocument(System.String,System.String,System.Boolean,hShahpouri.Telegram.Bot.ParseMode,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send general files up to 50 MB in size
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="document">File to send. You can either pass a file_id as String to resend a file that is already on the Telegram servers, or upload a new file</param>
+            <param name="is_file_id">If the document parameter is a file_id, send True otherwise False</param>
+            <param name="thumb">Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data.</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="caption">Document caption (may also be used when resending documents by file_id), 0-1024 characters</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendVideo(System.String,System.String,System.Boolean,hShahpouri.Telegram.Bot.ParseMode,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send video files, Telegram clients support mp4 videos up to 50 MB in size (other formats may be sent as Document)
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="video">Video to send. You can either pass a file_id as String to resend a video that is already on the Telegram servers, or upload a new video</param>
+            <param name="duration">Duration of sent video in seconds</param>
+            <param name="is_file_id">If the video parameter is a file_id, send True otherwise False</param>
+            <param name="thumb">Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data.</param>
+            <param name="supports_streaming">Pass True, if the uploaded video is suitable for streaming</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="width">Video width</param>
+            <param name="height">Video height</param>
+            <param name="caption">Video caption (may also be used when resending videos by file_id), 0-1024 characters</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendAnimation(System.String,System.String,System.Boolean,hShahpouri.Telegram.Bot.ParseMode,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent Message is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="animation">Animation to send. Pass a file_id as String to send an animation that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an animation from the Internet, or upload a new animation</param>
+            <param name="is_file_id">If the animation parameter is a file_id, send True otherwise False</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="thumb">Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data.</param>
+            <param name="duration">Duration of sent animation in seconds</param>
+            <param name="width">Animation width</param>
+            <param name="height">Animation height</param>
+            <param name="caption">Animation caption (may also be used when resending animation by file_id), 0-1024 characters</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendVoice(System.String,System.String,System.Boolean,hShahpouri.Telegram.Bot.ParseMode,System.String,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .ogg file encoded with OPUS up to 50 MB in size (other formats may be sent as Audio or Document)
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="voice">Audio file to send. You can either pass a file_id as String to resend an audio that is already on the Telegram servers, or upload a new audio</param>
+            <param name="is_file_id">If the animation parameter is a file_id, send True otherwise False</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="caption">Voice message caption, 0-200 characters</param>
+            <param name="duration">Duration of sent audio in seconds</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendVideoNote(System.String,System.String,System.Boolean,hShahpouri.Telegram.Bot.ParseMode,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            As of v.4.0, Telegram clients support rounded square mp4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent Message is returned.
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="video_note">Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. More info on Sending Files ».</param>
+            <param name="is_file_id">If the video_note parameter is a file_id, send True otherwise False</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="thumb">Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data.</param>
+            <param name="duration">Duration of sent video in seconds</param>
+            <param name="length">Video width and height</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns></returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendMediaGroup(System.String,hShahpouri.Telegram.IInputMedia[],System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            Use this method to send a group of photos or videos as an album.
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="media">Array of <see cref="T:hShahpouri.Telegram.InputMediaPhoto"/> and <see cref="T:hShahpouri.Telegram.InputMediaVideo"/>, A JSON-serialized array describing photos and videos to be sent, must include 2–10 items</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <returns>On success, an array of the sent Messages is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendLocation(System.String,System.Single,System.Single,System.Nullable{System.Int32},System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send point on the map
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="latitude">Latitude of location</param>
+            <param name="longitude">Longitude of location</param>
+            <param name="live_period">Period in seconds for which the location will be updated, should be between 60 and 86400</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.editMessageLiveLocation(System.String,System.Nullable{System.Int32},System.String,System.Single,System.Single,hShahpouri.Telegram.InlineKeyboardMarkup)">
+            <summary>
+            Use this method to edit live location messages. A location can be edited until its live_period expires or editing is explicitly disabled by a call to stopMessageLiveLocation.
+            </summary>
+            <param name="chat_id">Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Required if inline_message_id is not specified. Unique identifier of the sent message</param>
+            <param name="inline_message_id">Required if chat_id and message_id are not specified. Identifier of the inline message</param>
+            <param name="latitude">Latitude of location</param>
+            <param name="longitude">Longitude of location</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard</param>
+            <returns>On success, if the edited message was sent by the bot, the edited Message is returned, otherwise True is returned.</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.stopMessageLiveLocation(System.String,System.Nullable{System.Int32},System.String,hShahpouri.Telegram.InlineKeyboardMarkup)">
+            <summary>
+            Use this method to stop updating a live location message before live_period expires.
+            </summary>
+            <param name="chat_id">Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Required if inline_message_id is not specified. Unique identifier of the sent message</param>
+            <param name="inline_message_id">Required if chat_id and message_id are not specified. Identifier of the inline message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard</param>
+            <returns>On success, if the message was sent by the bot, the sent Message is returned, otherwise True is returned.</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendVenue(System.String,System.Single,System.Single,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send information about a venue
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="latitude">Latitude of location</param>
+            <param name="longitude">Longitude of location</param>
+            <param name="title">Name of the venue</param>
+            <param name="address">Address of the venue</param>
+            <param name="foursquare_id">Foursquare identifier of the venue</param>
+            <param name="foursquare_type">Foursquare type of the venue, if known. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendContact(System.String,System.String,System.String,System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send phone contacts
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="phone_number">Contact's phone number</param>
+            <param name="first_name">Contact's first name</param>
+            <param name="last_name">Contact's last name</param>
+            <param name="vcard">Additional data about the contact in the form of a vCard, 0-2048 bytes</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendPoll(System.String,System.String,System.String[],System.Nullable{System.Boolean},System.Nullable{System.Int32},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to send a native poll. A native poll can't be sent to a private chat
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="question">Poll question, 1-255 characters</param>
+            <param name="options">List of answer options, 2-10 strings 1-100 characters each</param>
+            <param name="disable_notification">Sends the message silently. iOS users will not receive a notification, Android users will receive a notification with no sound</param>
+            <param name="reply_to_message_id">If the message is a reply, ID of the original message</param>
+            <param name="reply_markup">Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to hide reply keyboard or to force a reply from the user</param>
+            <returns>On success, the sent Message is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.sendChatAction(System.String,hShahpouri.Telegram.Bot.ChatAction)">
+            <summary>
+            Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="action">Type of action to broadcast</param>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.getUserProfilePhotos(System.Int64,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Use this method to get a list of profile pictures for a user
+            </summary>
+            <param name="user_id">Unique identifier of the target user</param>
+            <param name="offset">Sequential number of the first photo to be returned. By default, all photos are returned</param>
+            <param name="limit">Limits the number of photos to be retrieved. Values between 1—100 are accepted. Defaults to 100</param>
+            <returns>Returns a UserProfilePhotos object</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.getFile(System.String)">
+            <summary>
+            Use this method to get basic info about a file and prepare it for downloading
+            </summary>
+            <param name="file_id">File identifier to get info about</param>
+            <returns>On success, a File object is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.kickChatMember(System.String,System.Int64,System.Nullable{System.Int32})">
+            <summary>
+            Use this method to kick a user from a group or a supergroup
+            </summary>
+            <param name="chat_id">Unique identifier for the target group or username of the target supergroup</param>
+            <param name="user_id">Unique identifier of the target user</param>
+            <param name="until_date">Date when the user will be unbanned, unix time. If user is banned for more than 366 days or less than 30 seconds from the current time they are considered to be banned forever</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.unbanChatMember(System.String,System.Int64)">
+            <summary>
+            Use this method to unban a previously kicked user in a supergroup. The user will not return to the group automatically, but will be able to join via link, etc
+            </summary>
+            <param name="chat_id">Unique identifier for the target group or username of the target supergroup</param>
+            <param name="user_id">Unique identifier of the target user</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.restrictChatMember(System.String,System.Int64,hShahpouri.Telegram.ChatPermissions,System.Nullable{System.Int32})">
+            <summary>
+            Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate admin rights. Pass True for all boolean parameters to lift restrictions from a user
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)</param>
+            <param name="user_id">Unique identifier of the target user</param>
+            <param name="permissions">New user permissions</param>
+            <param name="until_date">Date when restrictions will be lifted for the user, unix time. If user is restricted for more than 366 days or less than 30 seconds from the current time, they are considered to be restricted forever</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.promoteChatMember(System.String,System.Int64,System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
+            <summary>
+            Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Pass False for all boolean parameters to demote a user
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)</param>
+            <param name="user_id">Unique identifier of the target user</param>
+            <param name="can_change_info">Pass True, if the administrator can change chat title, photo and other settings</param>
+            <param name="can_post_messages">Pass True, if the administrator can create channel posts, channels only</param>
+            <param name="can_edit_messages">Pass True, if the administrator can edit messages of other users, channels only</param>
+            <param name="can_delete_messages">Pass True, if the administrator can delete messages of other users</param>
+            <param name="can_invite_users">Pass True, if the administrator can invite new users to the chat</param>
+            <param name="can_restrict_members">Pass True, if the administrator can restrict, ban or unban chat members</param>
+            <param name="can_pin_messages">Pass True, if the administrator can pin messages, supergroups only</param>
+            <param name="can_promote_members">Pass True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by him)</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.setChatPermissions(System.String,hShahpouri.Telegram.ChatPermissions)">
+            <summary>
+            Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the can_restrict_members admin rights
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)</param>
+            <param name="permissions">New default chat permissions</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.exportChatInviteLink(System.String)">
+            <summary>
+            Use this method to export an invite link to a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <returns>Returns exported invite link as String on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.setChatPhoto(System.String,System.String)">
+            <summary>
+            Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="photo">New chat photo, uploaded using multipart/form-data</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.deleteChatPhoto(System.String)">
+            <summary>
+            Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.setChatTitle(System.String,System.String)">
+            <summary>
+            Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="title">New chat title, 1-255 characters</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.setChatDescription(System.String,System.String)">
+            <summary>
+            Use this method to change the description of a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="description">New chat description, 0-255 characters</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.pinChatMessage(System.String,System.Int32,System.Nullable{System.Boolean})">
+            <summary>
+            Use this method to pin a message in a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Identifier of a message to pin</param>
+            <param name="disable_notification">Pass True, if it is not necessary to send a notification to all group members about the new pinned message</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.unpinChatMessage(System.String)">
+            <summary>
+            Use this method to unpin a message in a supergroup chat. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.leaveChat(System.String)">
+            <summary>
+            Use this method for your bot to leave a group, supergroup or channel
+            </summary>
+            <param name="chat_id">Unique identifier for the target group or username of the target supergroup</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.getChat(System.String)">
+            <summary>
+            Use this method to get up to date information about the chat
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)</param>
+            <returns>Returns a Chat object on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.getChatAdministrators(System.String)">
+            <summary>
+            Use this method to get a list of administrators in a chat. If the chat is a group or a supergroup and no administrators were appointed, only the creator will be returned
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)</param>
+            <returns>On success, returns an Array of ChatMember objects that contains information about all chat administrators except other bots</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.getChatMembersCount(System.String)">
+            <summary>
+            Use this method to get the number of members in a chat
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)</param>
+            <returns>Returns Int on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.getChatMember(System.String,System.Int64)">
+            <summary>
+            Use this method to get information about a member of a chat
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target supergroup or channel (in the format @channelusername)</param>
+            <param name="user_id">Unique identifier of the target user</param>
+            <returns>Returns a ChatMember object on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.answerCallbackQuery(System.String,System.String,System.Nullable{System.Boolean},System.Nullable{System.Int32})">
+            <summary>
+            Use this method to send answers to callback queries sent from inline keyboards
+            </summary>
+            <param name="callback_query_id">Unique identifier for the query to be answered</param>
+            <param name="text">Text of the notification. If not specified, nothing will be shown to the user, 0-200 characters</param>
+            <param name="show_alert">If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false</param>
+            <param name="cache_time">The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0.</param>
+            <returns>On success, True is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.editMessageText(System.String,System.Nullable{System.Int32},System.String,System.String,hShahpouri.Telegram.Bot.ParseMode,System.Nullable{System.Boolean},hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to edit text messages sent by the bot or via the bot (for inline bots)
+            </summary>
+            <param name="chat_id">Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Required if inline_message_id is not specified. Unique identifier of the sent message</param>
+            <param name="inline_message_id">Required if chat_id and message_id are not specified. Identifier of the inline message</param>
+            <param name="text">New text of the message</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="disable_web_page_preview">Disables link previews for links in this message</param>
+            <param name="reply_markup">A JSON-serialized object for an inline keyboard</param>
+            <returns>On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.editMessageCaption(System.String,System.Nullable{System.Int32},System.String,System.String,hShahpouri.Telegram.Bot.ParseMode,hShahpouri.Telegram.IMarkup)">
+            <summary>
+            Use this method to edit captions of messages sent by the bot or via the bot (for inline bots)
+            </summary>
+            <param name="chat_id">Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Required if inline_message_id is not specified. Unique identifier of the sent message</param>
+            <param name="inline_message_id">Required if chat_id and message_id are not specified. Identifier of the inline message</param>
+            <param name="caption">New caption of the message</param>
+            <param name="parse_mode">Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message</param>
+            <param name="reply_markup">A JSON-serialized object for an inline keyboard</param>
+            <returns>On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.editMessageMedia(System.String,System.Nullable{System.Int32},System.String,hShahpouri.Telegram.IInputMedia,hShahpouri.Telegram.InlineKeyboardMarkup)">
+            <summary>
+            Use this method to edit animation, audio, document, photo, or video messages. If a message is a part of a message album, then it can be edited only to a photo or a video. Otherwise, message type can be changed arbitrarily. When inline message is edited, new file can't be uploaded. Use previously uploaded file via its file_id or specify a URL.
+            </summary>
+            <param name="chat_id">Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Required if inline_message_id is not specified. Identifier of the message to edit</param>
+            <param name="inline_message_id">Required if chat_id and message_id are not specified. Identifier of the inline message</param>
+            <param name="media">A JSON-serialized object for a new media content of the message</param>
+            <param name="reply_markup">A JSON-serialized object for a new inline keyboard</param>
+            <returns>On success, if the edited message was sent by the bot, the edited Message is returned, otherwise True is returned.</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.editMessageReplyMarkup(System.String,System.Nullable{System.Int32},System.String,hShahpouri.Telegram.InlineKeyboardMarkup)">
+            <summary>
+            Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots)
+            </summary>
+            <param name="chat_id">Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Required if inline_message_id is not specified. Unique identifier of the sent message</param>
+            <param name="inline_message_id">Required if chat_id and message_id are not specified. Identifier of the inline message</param>
+            <param name="reply_markup">A JSON-serialized object for an inline keyboard</param>
+            <returns>On success, if edited message is sent by the bot, the edited Message is returned, otherwise True is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.stopPoll(System.String,System.Nullable{System.Int32},hShahpouri.Telegram.InlineKeyboardMarkup)">
+            <summary>
+            Use this method to edit only the reply markup of messages sent by the bot or via the bot (for inline bots)
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Identifier of the original message with the poll</param>
+            <param name="reply_markup">A JSON-serialized object for an inline keyboard</param>
+            <returns>On success, the stopped Poll with the final results is returned</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.deleteMessage(System.String,System.Int32)">
+            <summary>
+            Use this method to delete a message, including service messages
+            </summary>
+            <param name="chat_id">Unique identifier for the target chat or username of the target channel (in the format @channelusername)</param>
+            <param name="message_id">Identifier of the message to delete</param>
+            <returns>Returns True on success</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.IsUserInChannel(System.Int64,System.String)">
+            <summary>
+            Check that the user is already joint the channel
+            </summary>
+            <param name="user_id">Unique identifier of the target user</param>
+            <param name="channelUsername">Unique identifier of the target channel</param>
+            <returns>Returns True if user is presented in the channel, Otherwise False</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.getMe">
+            <summary>
+            A simple method for testing your bot's auth token. Requires no parameters
+            </summary>
+            <returns>Returns basic information about the bot in form of a User object</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.setWebhook(System.String)">
+            <summary>
+            Use this method to specify a url and receive incoming updates via an outgoing webhook
+            </summary>
+            <param name="url">HTTPS url to send updates to. Use an empty string to remove webhook integration</param>
+            <returns>returns the result of setting webhook url operation</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.deleteWebhook">
+            <summary>
+            Use this method to remove webhook integration if you decide to switch back to getUpdates
+            </summary>
+            <returns>Returns True on success. Requires no parameters</returns>
+        </member>
+        <member name="M:hShahpouri.Telegram.Bot.getWebhookInfo">
+            <summary>
+            Use this method to get current webhook status
+            </summary>
+            <returns>On success, returns a WebhookInfo object</returns>
+        </member>
+        <member name="T:hShahpouri.Telegram.CallbackQuery">
+            <summary>
+            This object represents an incoming callback query from a callback button in an inline keyboard
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.CallbackQuery.id">
+            <summary>
+            Unique identifier for this query
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.CallbackQuery.from">
+            <summary>
+            Sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.CallbackQuery.message">
+            <summary>
+            Optional. Message with the callback button that originated the query. Note that message content and message date will not be available if the message is too old
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.CallbackQuery.inline_message_id">
+            <summary>
+            Optional. Identifier of the message sent via the bot in inline mode, that originated the query
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.CallbackQuery.chat_instance">
+            <summary>
+            Global identifier, uniquely corresponding to the chat to which the message with the callback button was sent. Useful for high scores in games
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.CallbackQuery.data">
+            <summary>
+            Data associated with the callback button
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.CallbackQuery.game_short_name">
+            <summary>
+            Optional. Short name of a Game to be returned, serves as the unique identifier for the game
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Chat">
+            <summary>
+            This object represents a chat
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.Chat.type_private">
+            <summary>
+            “private” for <see cref="P:hShahpouri.Telegram.Chat.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.Chat.type_group">
+            <summary>
+            “group” for <see cref="P:hShahpouri.Telegram.Chat.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.Chat.type_supergroup">
+            <summary>
+            “supergroup” for <see cref="P:hShahpouri.Telegram.Chat.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.Chat.type_channel">
+            <summary>
+            “channel” for <see cref="P:hShahpouri.Telegram.Chat.type"/>
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.id">
+            <summary>
+            Unique identifier for this chat.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.type">
+            <summary>
+            Type of chat, can be either “private”, “group”, “supergroup” or “channel”
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.title">
+            <summary>
+            Optional. Title, for channels and group chats
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.username">
+            <summary>
+            Optional. Username, for private chats, supergroups and channels if available
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.first_name">
+            <summary>
+            Optional. First name of the other party in a private chat
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.last_name">
+            <summary>
+            Optional. Last name of the other party in a private chat
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.photo">
+            <summary>
+            Optional. Chat photo. Returned only in getChat
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.description">
+            <summary>
+            Optional. Description, for supergroups and channel chats. Returned only in getChat
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.invite_link">
+            <summary>
+            Optional. Chat invite link, for supergroups and channel chats. Returned only in getChat
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.pinned_message">
+            <summary>
+            Optional. Pinned message, for groups, supergroups and channels. Returned only in getChat.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.permissions">
+            <summary>
+            Optional. Default chat member permissions, for groups and supergroups. Returned only in getChat.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.sticker_set_name">
+            <summary>
+            Optional. For supergroups, name of group sticker set. Returned only in getChat.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Chat.can_set_sticker_set">
+            <summary>
+            Optional. True, if the bot can change the group sticker set. Returned only in getChat.
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ChatMember">
+            <summary>
+            This object contains information about one member of the chat
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.ChatMember.status_creator">
+            <summary>
+            “creator” for <see cref="P:hShahpouri.Telegram.ChatMember.status"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.ChatMember.status_administrator">
+            <summary>
+            “administrator” for <see cref="P:hShahpouri.Telegram.ChatMember.status"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.ChatMember.status_member">
+            <summary>
+            “member” for <see cref="P:hShahpouri.Telegram.ChatMember.status"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.ChatMember.status_restricted">
+            <summary>
+            “restricted” for <see cref="P:hShahpouri.Telegram.ChatMember.status"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.ChatMember.status_left">
+            <summary>
+            “left” for <see cref="P:hShahpouri.Telegram.ChatMember.status"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.ChatMember.status_kicked">
+            <summary>
+            “kicked” for <see cref="P:hShahpouri.Telegram.ChatMember.status"/>
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.user">
+            <summary>
+            Information about the user
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.status">
+            <summary>
+            The member's status in the chat. Can be “creator”, “administrator”, “member”, “restricted”, “left” or “kicked”
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.until_date">
+            <summary>
+            Optional. Restictred and kicked only. Date when restrictions will be lifted for this user, unix time
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_be_edited">
+            <summary>
+            Optional. Administrators only. True, if the bot is allowed to edit administrator privileges of that user
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_post_messages">
+            <summary>
+            Optional. Administrators only. True, if the administrator can post in the channel, channels only
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_edit_messages">
+            <summary>
+            Optional. Administrators only. True, if the administrator can edit messages of other users, channels only
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_delete_messages">
+            <summary>
+            Optional. Administrators only. True, if the administrator can delete messages of other users
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_invite_users">
+            <summary>
+            Optional. Administrators only. True, if the administrator can invite new users to the chat
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_restrict_members">
+            <summary>
+            Optional. Administrators only. True, if the administrator can restrict, ban or unban chat members
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_pin_messages">
+            <summary>
+            Optional. Administrators only. True, if the administrator can pin messages, supergroups only
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_promote_members">
+            <summary>
+            Optional. Administrators only. True, if the administrator can add new administrators with a subset of his own privileges or demote administrators that he has promoted, directly or indirectly (promoted by administrators that were appointed by the user)
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_change_info">
+            <summary>
+            Optional. Administrators only. True, if the administrator can change the chat title, photo and other settings
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_send_messages">
+            <summary>
+            Optional. Restricted only. True, if the user can send text messages, contacts, locations and venues
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_send_media_messages">
+            <summary>
+            Optional. Restricted only. True, if the user can send audios, documents, photos, videos, video notes and voice notes, implies can_send_messages
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_send_polls">
+            <summary>
+            Optional. Restricted only. True, if the user is allowed to send polls
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_send_other_messages">
+            <summary>
+            Optional. Restricted only. True, if the user can send animations, games, stickers and use inline bots, implies can_send_media_messages
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatMember.can_add_web_page_previews">
+            <summary>
+            Optional. Restricted only. True, if user may add web page previews to his messages, implies can_send_media_messages
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ChatPermissions">
+            <summary>
+            Describes actions that a non-administrator user is allowed to take in a chat
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPermissions.can_send_messages">
+            <summary>
+            Optional. True, if the user is allowed to send text messages, contacts, locations and venues
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPermissions.can_send_media_messages">
+            <summary>
+            Optional. True, if the user is allowed to send audios, documents, photos, videos, video notes and voice notes, implies can_send_messages
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPermissions.can_send_polls">
+            <summary>
+            Optional. True, if the user is allowed to send polls, implies can_send_messages
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPermissions.can_send_other_messages">
+            <summary>
+            Optional. True, if the user is allowed to send animations, games, stickers and use inline bots, implies can_send_media_messages
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPermissions.can_add_web_page_previews">
+            <summary>
+            Optional. True, if the user is allowed to add web page previews to their messages, implies can_send_media_messages
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPermissions.can_change_info">
+            <summary>
+            Optional. True, if the user is allowed to change the chat title, photo and other settings. Ignored in public supergroups
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPermissions.can_invite_users">
+            <summary>
+            Optional. True, if the user is allowed to invite new users to the chat
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPermissions.can_pin_messages">
+            <summary>
+            Optional. True, if the user is allowed to pin messages. Ignored in public supergroups
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ChatPhoto">
+            <summary>
+            This object represents a chat photo
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPhoto.small_file_id">
+            <summary>
+            Unique file identifier of small (160x160) chat photo. This file_id can be used only for photo download
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChatPhoto.big_file_id">
+            <summary>
+            Unique file identifier of big (640x640) chat photo. This file_id can be used only for photo download
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ChosenInlineResult">
+            <summary>
+            Represents a result of an inline query that was chosen by the user and sent to their chat partner
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChosenInlineResult.result_id">
+            <summary>
+            The unique identifier for the result that was chosen
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChosenInlineResult.from">
+            <summary>
+            The user that chose the result
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChosenInlineResult.location">
+            <summary>
+            Optional. Sender location, only for bots that require user location
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChosenInlineResult.inline_message_id">
+            <summary>
+            Optional. Identifier of the sent inline message. Available only if there is an inline keyboard attached to the message. Will be also received in callback queries and can be used to edit the message
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ChosenInlineResult.query">
+            <summary>
+            The query that was used to obtain the result
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Contact">
+            <summary>
+            This object represents a phone contact
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Contact.phone_number">
+            <summary>
+            Contact's phone number
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Contact.first_name">
+            <summary>
+            Contact's first name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Contact.last_name">
+            <summary>
+            Optional. Contact's last name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Contact.user_id">
+            <summary>
+            Optional. Contact's user identifier in Telegram
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Contact.vcard">
+            <summary>
+            Optional. Additional data about the contact in the form of a vCard
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Document">
+            <summary>
+            This object represents a general file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Document.file_id">
+            <summary>
+            Unique file identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Document.thumb">
+            <summary>
+            Optional. Document thumbnail as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Document.file_name">
+            <summary>
+            Optional. Original filename as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Document.mime_type">
+            <summary>
+            Optional. MIME type of the file as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Document.file_size">
+            <summary>
+            Optional. File size
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.File">
+            <summary>
+            This object represents a file ready to be downloaded. Maximum file size to download is 20 MB
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.File.file_id">
+            <summary>
+            Unique identifier for this file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.File.file_size">
+            <summary>
+            Optional. File size, if known
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.File.file_path">
+            <summary>
+            Optional. File path. Use https://api.telegram.org/file/bot&lt;token&gt;/&lt;file_path&gt; to get the file. 
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ForceReply">
+            <summary>
+            Upon receiving a message with this object, Telegram clients will display a reply interface to the user
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ForceReply.force_reply">
+            <summary>
+            Shows reply interface to the user, as if they manually selected the bot‘s message and tapped ’Reply'
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ForceReply.selective">
+            <summary>
+            Optional. Use this parameter if you want to force reply from specific users only
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.InlineKeyboardButton">
+            <summary>
+            This object represents one button of an inline keyboard. Must use exactly one of the optional fields
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineKeyboardButton.text">
+            <summary>
+            Label text on the button
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineKeyboardButton.url">
+            <summary>
+            Optional. HTTP or tg:// url to be opened when button is pressed
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineKeyboardButton.login_url">
+            <summary>
+            Optional. An HTTP URL used to automatically authorize the user
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineKeyboardButton.callback_data">
+            <summary>
+            Optional. Data to be sent in a callback query to the bot when button is pressed, 1-64 bytes
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineKeyboardButton.switch_inline_query">
+            <summary>
+            Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot‘s username and the specified inline query in the input field
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineKeyboardButton.switch_inline_query_current_chat">
+            <summary>
+            Optional. If set, pressing the button will insert the bot‘s username and the specified inline query in the current chat's input field. Can be empty, in which case only the bot’s username will be inserted
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineKeyboardButton.pay">
+            <summary>
+            Optional. Specify True, to send a Pay button. NOTE: This type of button must always be the first button in the first row.
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.InlineKeyboardMarkup">
+            <summary>
+            This object represents an inline keyboard that appears right next to the message it belongs to
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineKeyboardMarkup.inline_keyboard">
+            <summary>
+            Array of button rows, each represented by an Array of InlineKeyboardButton objects
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.InlineQuery">
+            <summary>
+            This object represents an incoming inline query
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineQuery.id">
+            <summary>
+            Unique identifier for this query
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineQuery.from">
+            <summary>
+            Sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineQuery.location">
+            <summary>
+            Optional. Sender location, only for bots that request user location
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineQuery.query">
+            <summary>
+            Text of the query (up to 512 characters)
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InlineQuery.offset">
+            <summary>
+            Offset of the results to be returned, can be controlled by the bot
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.InputMediaAnimation">
+            <summary>
+            Represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAnimation.type">
+            <summary>
+            Type of the result, must be animation
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAnimation.media">
+            <summary>
+            File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one using multipart/form-data under &lt;file_attach_name&gt; name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAnimation.caption">
+            <summary>
+            Optional. Caption of the photo to be sent, 0-1024 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAnimation.parse_mode">
+            <summary>
+            Optional. Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAnimation.thumb">
+            <summary>
+            Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was uploaded using multipart/form-data under &lt;file_attach_name&gt;.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAnimation.width">
+            <summary>
+            Optional. Video width
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAnimation.height">
+            <summary>
+            Optional. Video height
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAnimation.duration">
+            <summary>
+            Optional. Video duration
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.InputMediaAudio">
+            <summary>
+            Represents an audio file to be treated as music to be sent
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAudio.type">
+            <summary>
+            Type of the result, must be audio
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAudio.media">
+            <summary>
+            File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one using multipart/form-data under &lt;file_attach_name&gt; name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAudio.caption">
+            <summary>
+            Optional. Caption of the photo to be sent, 0-1024 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAudio.parse_mode">
+            <summary>
+            Optional. Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAudio.thumb">
+            <summary>
+            Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was uploaded using multipart/form-data under &lt;file_attach_name&gt;.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAudio.duration">
+            <summary>
+            Optional. Duration of the audio in seconds
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAudio.performer">
+            <summary>
+            Optional. Performer of the audio
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaAudio.title">
+            <summary>
+            Optional. Title of the audio
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.InputMediaDocument">
+            <summary>
+            Represents a general file to be sent
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaDocument.type">
+            <summary>
+            Type of the result, must be document
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaDocument.media">
+            <summary>
+            File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one using multipart/form-data under &lt;file_attach_name&gt; name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaDocument.caption">
+            <summary>
+            Optional. Caption of the photo to be sent, 0-1024 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaDocument.parse_mode">
+            <summary>
+            Optional. Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaDocument.thumb">
+            <summary>
+            Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was uploaded using multipart/form-data under &lt;file_attach_name&gt;.
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.InputMediaPhoto">
+            <summary>
+            Represents a photo to be sent
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaPhoto.type">
+            <summary>
+            Type of the result, must be photo
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaPhoto.media">
+            <summary>
+            File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one using multipart/form-data under &lt;file_attach_name&gt; name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaPhoto.caption">
+            <summary>
+            Optional. Caption of the photo to be sent, 0-1024 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaPhoto.parse_mode">
+            <summary>
+            Optional. Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.InputMediaVideo">
+            <summary>
+            Represents a video to be sent
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.type">
+            <summary>
+            Type of the result, must be video
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.media">
+            <summary>
+            File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://&lt;file_attach_name&gt;” to upload a new one using multipart/form-data under &lt;file_attach_name&gt; name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.thumb">
+            <summary>
+            Optional. Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail‘s width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can’t be reused and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was uploaded using multipart/form-data under &lt;file_attach_name&gt;.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.caption">
+            <summary>
+            Optional. Caption of the photo to be sent, 0-1024 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.parse_mode">
+            <summary>
+            Optional. Send Markdown or HTML, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in the media caption
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.width">
+            <summary>
+            Optional. Video width
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.height">
+            <summary>
+            Optional. Video height
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.duration">
+            <summary>
+            Optional. Video duration
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.InputMediaVideo.supports_streaming">
+            <summary>
+            Optional. Pass True, if the uploaded video is suitable for streaming
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Invoice">
+            <summary>
+            This object contains basic information about an invoice
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Invoice.title">
+            <summary>
+            Product name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Invoice.description">
+            <summary>
+            Product description
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Invoice.start_parameter">
+            <summary>
+            Unique bot deep-linking parameter that can be used to generate this invoice
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Invoice.currency">
+            <summary>
+            Three-letter ISO 4217 currency code
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Invoice.total_amount">
+            <summary>
+            Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.KeyboardButton">
+            <summary>
+            This object represents one button of the reply keyboard. For simple text buttons String can be used instead of this object to specify text of the button. Optional fields are mutually exclusive.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.KeyboardButton.text">
+            <summary>
+            Text of the button. If none of the optional fields are used, it will be sent to the bot as a message when the button is pressed
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.KeyboardButton.request_contact">
+            <summary>
+            Optional. If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.KeyboardButton.request_location">
+            <summary>
+            Optional. If True, the user's current location will be sent when the button is pressed. Available in private chats only
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Location">
+            <summary>
+            This object represents a point on the map
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Location.longitude">
+            <summary>
+            Longitude as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Location.latitude">
+            <summary>
+            Latitude as defined by sender
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.LoginUrl">
+            <summary>
+            This object represents a parameter of the inline keyboard button used to automatically authorize a user
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.LoginUrl.url">
+            <summary>
+            An HTTP URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.LoginUrl.forward_text">
+            <summary>
+            Optional. New text of the button in forwarded messages
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.LoginUrl.bot_username">
+            <summary>
+            Optional. Username of a bot, which will be used for user authorization
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.LoginUrl.request_write_access">
+            <summary>
+            Optional. Pass True to request the permission for your bot to send messages to the user.
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Message">
+            <summary>
+            This object represents a message
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.message_id">
+            <summary>
+            Unique message identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.from">
+            <summary>
+            Optional. Sender, can be empty for messages sent to channels
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.date">
+            <summary>
+            Date the message was sent in Unix time
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.chat">
+            <summary>
+            Conversation the message belongs to
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.forward_from">
+            <summary>
+            Optional. For forwarded messages, sender of the original message
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.forward_from_chat">
+            <summary>
+            Optional. For messages forwarded from a channel, information about the original channel
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.forward_from_message_id">
+            <summary>
+            Optional. For forwarded channel posts, identifier of the original message in the channel
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.forward_signature">
+            <summary>
+            Optional. For messages forwarded from channels, signature of the post author if present
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.forward_sender_name">
+            <summary>
+            Optional. Sender's name for messages forwarded from users who disallow adding a link to their account in forwarded messages
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.forward_date">
+            <summary>
+            Optional. For forwarded messages, date the original message was sent in Unix time
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.reply_to_message">
+            <summary>
+            Optional. For replies, the original message
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.edit_date">
+            <summary>
+            Optional. Date the message was last edited in Unix time
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.media_group_id">
+            <summary>
+            Optional. The unique identifier of a media message group this message belongs to
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.author_signature">
+            <summary>
+            Optional. Signature of the post author for messages in channels
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.text">
+            <summary>
+            Optional. For text messages, the actual UTF-8 text of the message, 0-4096 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.entities">
+            <summary>
+            Optional. For text messages, special entities like usernames, URLs, bot commands, etc. that appear in the text
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.caption_entities">
+            <summary>
+            Optional. For messages with a caption, special entities like usernames, URLs, bot commands, etc. that appear in the caption
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.audio">
+            <summary>
+            Optional. Message is an audio file, information about the file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.document">
+            <summary>
+            Optional. Message is a general file, information about the file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.animation">
+            <summary>
+            Optional. Message is an animation, information about the animation. For backward compatibility, when this field is set, the document field will also be set
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.photo">
+            <summary>
+            Optional. Message is a photo, available sizes of the photo
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.sticker">
+            <summary>
+            Optional. Message is a sticker, information about the sticker
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.video">
+            <summary>
+            Optional. Message is a video, information about the video
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.voice">
+            <summary>
+            Optional. Message is a voice message, information about the file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.video_note">
+            <summary>
+            Optional. Message is a video note, information about the video message
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.caption">
+            <summary>
+            Optional. Caption for the document, photo or video, 0-200 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.contact">
+            <summary>
+            Optional. Message is a shared contact, information about the contact
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.location">
+            <summary>
+            Optional. Message is a shared location, information about the location
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.venue">
+            <summary>
+            Optional. Message is a venue, information about the venue
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.poll">
+            <summary>
+            Optional. Message is a native poll, information about the poll
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.new_chat_members">
+            <summary>
+            Optional. New members that were added to the group or supergroup and information about them (the bot itself may be one of these members)
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.left_chat_member">
+            <summary>
+            Optional. A member was removed from the group, information about them (this member may be the bot itself)
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.new_chat_title">
+            <summary>
+            Optional. A chat title was changed to this value
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.new_chat_photo">
+            <summary>
+            Optional. A chat photo was change to this value
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.delete_chat_photo">
+            <summary>
+            Optional. Service message: the chat photo was deleted
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.group_chat_created">
+            <summary>
+            Optional. Service message: the group has been created
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.supergroup_chat_created">
+            <summary>
+            Optional. Service message: the supergroup has been created
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.channel_chat_created">
+            <summary>
+            Optional. Service message: the channel has been created
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.migrate_to_chat_id">
+            <summary>
+            Optional. The group has been migrated to a supergroup with the specified identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.migrate_from_chat_id">
+            <summary>
+            Optional. The supergroup has been migrated from a group with the specified identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.pinned_message">
+            <summary>
+            Optional. Specified message was pinned
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.invoice">
+            <summary>
+            Optional. Message is an invoice for a payment, information about the invoice.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.successful_payment">
+            <summary>
+            Optional. Message is a service message about a successful payment, information about the payment.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.connected_website">
+            <summary>
+            Optional. The domain name of the website on which the user has logged in.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Message.reply_markup">
+            <summary>
+            Optional. Inline keyboard attached to the message. login_url buttons are represented as ordinary url buttons.
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.MessageEntity">
+            <summary>
+            This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_mention">
+            <summary>
+            “mention” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_hashtag">
+            <summary>
+            “hashtag” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_bot_command">
+            <summary>
+            “bot_command” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_url">
+            <summary>
+            “url” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_email">
+            <summary>
+            “email” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_phone_number">
+            <summary>
+            “phone_number” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_bold">
+            <summary>
+            “bold” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_italic">
+            <summary>
+            “italic” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_code">
+            <summary>
+            “code” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_pre">
+            <summary>
+            “pre” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_text_link">
+            <summary>
+            “text_link” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="F:hShahpouri.Telegram.MessageEntity.type_text_mention">
+            <summary>
+            “text_mention” for <see cref="P:hShahpouri.Telegram.MessageEntity.type"/>
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MessageEntity.type">
+            <summary>
+            Type of the entity. Can be mention (@username), hashtag, cashtag, bot_command, url, email, phone_number, bold (bold text), italic (italic text), code (monowidth string), pre (monowidth block), text_link (for clickable text URLs), text_mention (for users without usernames)
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MessageEntity.offset">
+            <summary>
+            Offset in UTF-16 code units to the start of the entity
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MessageEntity.length">
+            <summary>
+            Length of the entity in UTF-16 code units
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MessageEntity.url">
+            <summary>
+            Optional. For “text_link” only, url that will be opened after user taps on the text
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.MessageEntity.user">
+            <summary>
+            Optional. For “text_mention” only, the mentioned user
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.OrderInfo">
+            <summary>
+            This object represents information about an order.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.OrderInfo.name">
+            <summary>
+            Optional. User name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.OrderInfo.phone_number">
+            <summary>
+            Optional. User's phone number
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.OrderInfo.email">
+            <summary>
+            Optional. User email
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.OrderInfo.shipping_address">
+            <summary>
+            Optional. User shipping address
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.PhotoSize">
+            <summary>
+            This object represents one size of a photo or a file / sticker thumbnail
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PhotoSize.file_id">
+            <summary>
+            Unique identifier for this file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PhotoSize.width">
+            <summary>
+            Photo width
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PhotoSize.height">
+            <summary>
+            Photo height
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PhotoSize.file_size">
+            <summary>
+            Optional. File size
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Poll">
+            <summary>
+            This object contains information about a poll
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Poll.id">
+            <summary>
+            Unique poll identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Poll.question">
+            <summary>
+            Poll question, 1-255 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Poll.options">
+            <summary>
+            List of poll options
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Poll.is_closed">
+            <summary>
+            True, if the poll is closed
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.PollOption">
+            <summary>
+            This object contains information about one answer option in a poll
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PollOption.text">
+            <summary>
+            Option text, 1-100 characters
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PollOption.voter_count">
+            <summary>
+            Number of users that voted for this option
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.PreCheckoutQuery">
+            <summary>
+            This object contains information about an incoming pre-checkout query.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PreCheckoutQuery.id">
+            <summary>
+            Unique query identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PreCheckoutQuery.from">
+            <summary>
+            User who sent the query
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PreCheckoutQuery.currency">
+            <summary>
+            Three-letter ISO 4217 currency code
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PreCheckoutQuery.total_amount">
+            <summary>
+            Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PreCheckoutQuery.invoice_payload">
+            <summary>
+            Bot specified invoice payload
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PreCheckoutQuery.shipping_option_id">
+            <summary>
+            Optional. Identifier of the shipping option chosen by the user
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.PreCheckoutQuery.order_info">
+            <summary>
+            Optional. Order info provided by the user
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ReplyKeyboardMarkup">
+            <summary>
+            This object represents a custom keyboard with reply options
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ReplyKeyboardMarkup.keyboard">
+            <summary>
+            Array of button rows, each represented by an Array of KeyboardButton objects
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ReplyKeyboardMarkup.resize_keyboard">
+            <summary>
+            Optional. Requests clients to resize the keyboard vertically for optimal fit
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ReplyKeyboardMarkup.one_time_keyboard">
+            <summary>
+            Optional. Requests clients to hide the keyboard as soon as it's been used
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ReplyKeyboardMarkup.selective">
+            <summary>
+            Optional. Use this parameter if you want to show the keyboard to specific users only
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ReplyKeyboardRemove">
+            <summary>
+            Upon receiving a message with this object, Telegram clients will hide the current custom keyboard and display the default letter-keyboard
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ReplyKeyboardRemove.remove_keyboard">
+            <summary>
+            Requests clients to hide the custom keyboard
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ReplyKeyboardRemove.selective">
+            <summary>
+            Optional. Use this parameter if you want to hide keyboard for specific users only
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ResponseParameters">
+            <summary>
+            Contains information about why a request was unsuccessful
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ResponseParameters.migrate_to_chat_id">
+            <summary>
+            Optional. The group has been migrated to a supergroup with the specified identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ResponseParameters.retry_after">
+            <summary>
+            Optional. In case of exceeding flood control, the number of seconds left to wait before the request can be repeated
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ShippingAddress">
+            <summary>
+            This object represents a shipping address.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingAddress.country_code">
+            <summary>
+            ISO 3166-1 alpha-2 country code
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingAddress.state">
+            <summary>
+            State, if applicable
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingAddress.city">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingAddress.street_line1">
+            <summary>
+            First line for the address
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingAddress.street_line2">
+            <summary>
+            Second line for the address
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingAddress.post_code">
+            <summary>
+            Address post code
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.ShippingQuery">
+            <summary>
+            This object contains information about an incoming shipping query.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingQuery.id">
+            <summary>
+            Unique query identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingQuery.from">
+            <summary>
+            User who sent the query
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingQuery.invoice_payload">
+            <summary>
+            Bot specified invoice payload
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.ShippingQuery.shipping_address">
+            <summary>
+            User specified shipping address
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Sticker">
+            <summary>
+            This object represents a sticker
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.file_id">
+            <summary>
+            Unique identifier for this file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.width">
+            <summary>
+            Sticker width
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.height">
+            <summary>
+            Sticker height
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.is_animated">
+            <summary>
+            True, if the sticker is animated
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.thumb">
+            <summary>
+            Optional. Sticker thumbnail in .webp or .jpg format
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.emoji">
+            <summary>
+            Optional. Emoji associated with the sticker
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.set_name">
+            <summary>
+            Optional. Name of the sticker set to which the sticker belongs
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.mask_position">
+            <summary>
+            Optional. For mask stickers, the position where the mask should be placed
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Sticker.file_size">
+            <summary>
+            Optional. File size
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.SuccessfulPayment">
+            <summary>
+            This object contains basic information about a successful payment
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.SuccessfulPayment.currency">
+            <summary>
+            Three-letter ISO 4217 currency code
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.SuccessfulPayment.total_amount">
+            <summary>
+            Total price in the smallest units of the currency (integer, not float/double). For example, for a price of US$ 1.45 pass amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.SuccessfulPayment.invoice_payload">
+            <summary>
+            Bot specified invoice payload
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.SuccessfulPayment.shipping_option_id">
+            <summary>
+            Optional. Identifier of the shipping option chosen by the user
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.SuccessfulPayment.order_info">
+            <summary>
+            Optional. Order info provided by the user
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.SuccessfulPayment.telegram_payment_charge_id">
+            <summary>
+            Telegram payment identifier
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.SuccessfulPayment.provider_payment_charge_id">
+            <summary>
+            Provider payment identifier
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Update">
+            <summary>
+            This object represents an incoming update
+            </summary>
+            
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.update_id">
+            <summary>
+            The update‘s unique identifier. Update identifiers start from a certain positive number and increase sequentially
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.message">
+            <summary>
+            Optional. New incoming message of any kind — text, photo, sticker, etc
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.edited_message">
+            <summary>
+            Optional. New version of a message that is known to the bot and was edited
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.channel_post">
+            <summary>
+            Optional. New incoming channel post of any kind — text, photo, sticker, etc.
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.edited_channel_post">
+            <summary>
+            Optional. New version of a channel post that is known to the bot and was edited
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.inline_query">
+            <summary>
+            Optional. New incoming inline query
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.chosen_inline_result">
+            <summary>
+            Optional. The result of an inline query that was chosen by a user and sent to their chat partner
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.callback_query">
+            <summary>
+            Optional. New incoming callback query
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.shipping_query">
+            <summary>
+            Optional. New incoming shipping query. Only for invoices with flexible price
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.pre_checkout_query">
+            <summary>
+            Optional. New incoming pre-checkout query. Contains full information about checkout
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Update.poll">
+            <summary>
+            Optional. New poll state. Bots receive only updates about stopped polls and polls, which are sent by the bot
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.User">
+            <summary>
+            This object represents a Telegram user or bot
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.User.id">
+            <summary>
+            Unique identifier for this user or bot
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.User.is_bot">
+            <summary>
+            True, if this user is a bot
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.User.first_name">
+            <summary>
+            User‘s or bot’s first name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.User.last_name">
+            <summary>
+            Optional. User‘s or bot’s last name
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.User.username">
+            <summary>
+            Optional. User‘s or bot’s username
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.User.language_code">
+            <summary>
+            Optional. IETF language tag of the user's language
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.UserProfilePhotos">
+            <summary>
+            This object represent a user's profile pictures
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.UserProfilePhotos.total_count">
+            <summary>
+            Total number of profile pictures the target user has
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.UserProfilePhotos.photos">
+            <summary>
+            Requested profile pictures (in up to 4 sizes each)
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Venue">
+            <summary>
+            This object represents a venue
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Venue.location">
+            <summary>
+            Venue location
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Venue.title">
+            <summary>
+            Name of the venue
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Venue.address">
+            <summary>
+            Address of the venue
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Venue.foursquare_id">
+            <summary>
+            Optional. Foursquare identifier of the venue
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Venue.foursquare_type">
+            <summary>
+            Optional. Foursquare type of the venue. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Video">
+            <summary>
+            This object represents a video file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Video.file_id">
+            <summary>
+            Unique identifier for this file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Video.width">
+            <summary>
+            Video width as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Video.height">
+            <summary>
+            Video height as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Video.duration">
+            <summary>
+            Duration of the video in seconds as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Video.thumb">
+            <summary>
+            Optional. Video thumbnail
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Video.mime_type">
+            <summary>
+            Optional. Mime type of a file as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Video.file_size">
+            <summary>
+            Optional. File size
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.VideoNote">
+            <summary>
+            This object represents a video message (available in Telegram apps as of v.4.0).
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.VideoNote.file_id">
+            <summary>
+            Unique identifier for this file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.VideoNote.length">
+            <summary>
+            Video width and height as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.VideoNote.duration">
+            <summary>
+            Duration of the video in seconds as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.VideoNote.thumb">
+            <summary>
+            Optional. Video thumbnail
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.VideoNote.file_size">
+            <summary>
+            Optional. File size
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.Voice">
+            <summary>
+            This object represents a voice note
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Voice.file_id">
+            <summary>
+            Unique identifier for this file
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Voice.duration">
+            <summary>
+            Duration of the audio in seconds as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Voice.mime_type">
+            <summary>
+            Optional. MIME type of the file as defined by sender
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.Voice.file_size">
+            <summary>
+            Optional. File size
+            </summary>
+        </member>
+        <member name="T:hShahpouri.Telegram.WebhookInfo">
+            <summary>
+            Contains information about the current status of a webhook
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.WebhookInfo.url">
+            <summary>
+            Webhook URL, may be empty if webhook is not set up
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.WebhookInfo.has_custom_certificate">
+            <summary>
+            True, if a custom certificate was provided for webhook certificate checks
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.WebhookInfo.pending_update_count">
+            <summary>
+            Number of updates awaiting delivery
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.WebhookInfo.last_error_date">
+            <summary>
+            Optional. Unix time for the most recent error that happened when trying to deliver an update via webhook
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.WebhookInfo.last_error_message">
+            <summary>
+            Optional. Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.WebhookInfo.max_connections">
+            <summary>
+            Optional. Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery
+            </summary>
+        </member>
+        <member name="P:hShahpouri.Telegram.WebhookInfo.allowed_updates">
+            <summary>
+            Optional. A list of update types the bot is subscribed to. Defaults to all update types
+            </summary>
+        </member>
+    </members>
+</doc>
