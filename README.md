@@ -1,5 +1,5 @@
 # Telegram-BotSDK
-Telegram BotAPI SDK for .NET Developers
+Telegram Bot API SDK for .NET Developers (Framework / Standard / .Net Core)
 
 > If you are a Microsoft .NET developer using C#, VisualBasic, ASP.NET or other technologies and would like to create a bot on Telegram, Congratulations! you found the right SDK.
 
