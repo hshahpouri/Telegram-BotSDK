@@ -9,15 +9,14 @@ Telegram BotAPI SDK for .NET Developers
 ```c#
 using hShahpouri.Telegram;
 using System.Web.Http;
-using tgioBot.Models;
 
 namespace tgioBot.Controllers
 {
     public class StartController : ApiController
     {
         // POST: Start/{token}
-        [HttpPost]
-        public IHttpActionResult Post(string token, [FromBody]Update json)
+        [HttpPost("/Start/{token}")]
+        public IActionResult Post(string token, [FromBody]Update json)
         {
             if (json == null)
                 return BadRequest();
